@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
