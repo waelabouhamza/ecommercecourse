@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/routes.dart';
 import 'package:ecommercecourse/view/screen/onboarding.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +15,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false ,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "PlayfairDisplay",
+        textTheme: const TextTheme(
+            headline1: TextStyle(fontWeight: FontWeight.bold, fontSize: 20 , color: AppColor.black),
+            bodyText1: TextStyle(
+                height: 2,
+                color: AppColor.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 17)),
         primarySwatch: Colors.blue,
       ),
-      home:const OnBoarding(),
-      routes:routes ,
+      home: const OnBoarding(),
+      routes: routes,
     );
-
   }
 }
