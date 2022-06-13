@@ -10,30 +10,31 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      controller: controller.pageController,
-      onPageChanged: (val){
-        controller.onPageChanged(val) ; 
-      },
+        controller: controller.pageController,
+        onPageChanged: (val) {
+          controller.onPageChanged(val);
+        },
         itemCount: onBoardingList.length,
         itemBuilder: (context, i) => Column(
               children: [
-                Text(onBoardingList[i].title!,
-                    style:  Theme.of(context).textTheme.headline1),
-                const SizedBox(height: 80),
                 Image.asset(
                   onBoardingList[i].image!,
-                  width: 200,
-                  height: 230,
-                  fit: BoxFit.fill,
+                  // width: ,
+                  // height: 230,
+                  // fit: BoxFit.fill,
                 ),
                 const SizedBox(height: 80),
+                Text(onBoardingList[i].title!,
+                    style: Theme.of(context).textTheme.headline1),
+                const SizedBox(height: 20),
+          
                 Container(
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(
                       onBoardingList[i].body!,
                       textAlign: TextAlign.center,
-                      style:  Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyText1,
                     )),
               ],
             ));

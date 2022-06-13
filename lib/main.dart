@@ -20,12 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "PlayfairDisplay",
         textTheme: const TextTheme(
-            headline1: TextStyle(fontWeight: FontWeight.bold, fontSize: 20 , color: AppColor.black),
+          
+            headline1: TextStyle(fontWeight: FontWeight.bold, fontSize: 22 , color: AppColor.black),
             bodyText1: TextStyle(
                 height: 2,
                 color: AppColor.grey,
                 fontWeight: FontWeight.bold,
-                fontSize: 17)),
+                fontSize: 14)),
         primarySwatch: Colors.blue,
       ),
       home: const OnBoarding(),

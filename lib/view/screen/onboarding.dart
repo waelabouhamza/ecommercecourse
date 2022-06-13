@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/onboarding_controller.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/onboarding/custombutton.dart';
 import 'package:ecommercecourse/view/widget/onboarding/customslider.dart';
 import 'package:ecommercecourse/view/widget/onboarding/dotcontroller.dart';
@@ -10,13 +11,13 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(OnBoardingControllerImp()) ; 
+    Get.put(OnBoardingControllerImp()) ;
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.backgroundcolor,
         body: SafeArea(
           child: Column(children: [
             const Expanded(
-              flex: 3,
+              flex: 4,
               child: CustomSliderOnBoarding(),
             ),
             Expanded(
