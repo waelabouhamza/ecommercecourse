@@ -11,7 +11,7 @@ class CustonTextFormAuth extends StatelessWidget {
       required this.hinttext,
       required this.labeltext,
       required this.iconData,
-      this.mycontroller})
+      required this.mycontroller})
       : super(key: key);
 
   @override
