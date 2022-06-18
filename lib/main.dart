@@ -42,6 +42,10 @@ class MyApp extends StatelessWidget {
                 height: 2,
                 color: AppColor.grey,
                 fontWeight: FontWeight.bold,
+                fontSize: 14),
+            bodyText2: TextStyle(
+                height: 2,
+                color: AppColor.grey,
                 fontSize: 14)),
         primarySwatch: Colors.blue,
       ),
