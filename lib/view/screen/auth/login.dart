@@ -1,4 +1,7 @@
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
+import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
+import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -18,39 +21,29 @@ class Login extends StatelessWidget {
                 .copyWith(color: AppColor.grey)),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15 , horizontal: 35),
-        child: ListView(children: [
-          const SizedBox(height: 20),
-          Text(
-            "Welcome Back",
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline2,
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+        child: ListView(children: const [
+          SizedBox(height: 20),
+          CustomTextTitleAuth(text: "Welcome Back"),
+          SizedBox(height: 10),
+          CustomTextBodyAuth(
+              text:
+                  "Sign In With Your Email And Password OR Continue With Social Media"),
+          SizedBox(height: 65),
+          CustonTextFormAuth(
+            hinttext: "Enter Your Email",
+            iconData: Icons.email_outlined,
+            labeltext: "Email",
+            // mycontroller: ,
           ),
-          const SizedBox(height: 10),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
-              "Sign In With Your Email And Password OR Continue With Social Media",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-          ),
-          const SizedBox(height: 25), 
-          TextFormField(
-          
-            decoration: InputDecoration( 
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              contentPadding: EdgeInsets.symmetric(vertical: 5 , horizontal: 30),
-              label: Text("Email"),
-              suffixIcon: Icon(Icons.email_outlined),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30)
-              )
-            ),
-          )
+          CustonTextFormAuth(
+            hinttext: "Enter Your Password",
+            iconData: Icons.lock_outline,
+            labeltext: "Password",
+            // mycontroller: ,
+          )  , 
         ]),
       ),
     );
   }
 }
- 
