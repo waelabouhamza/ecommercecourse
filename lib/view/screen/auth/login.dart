@@ -26,6 +26,7 @@ class Login extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
         child: ListView(children: [
           const LogoAuth(),
+          const SizedBox(height: 20) , 
           const CustomTextTitleAuth(text: "Welcome Back"),
           const SizedBox(height: 10),
           const CustomTextBodyAuth(
