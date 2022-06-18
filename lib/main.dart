@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-  LocaleController controller =   Get.put(LocaleController()) ;
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
@@ -33,6 +33,10 @@ class MyApp extends StatelessWidget {
             headline1: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
+                color: AppColor.black),
+            headline2: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 26,
                 color: AppColor.black),
             bodyText1: TextStyle(
                 height: 2,
