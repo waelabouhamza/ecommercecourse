@@ -77,6 +77,7 @@ dependencies:
   responsive_builder: ^0.4.2
   image_pickers: ^2.0.0+2
   flutter_svg: ^0.23.0+1
+  flutter_otp_text_field: ^1.0.1
 
 dev_dependencies:
   flutter_test:

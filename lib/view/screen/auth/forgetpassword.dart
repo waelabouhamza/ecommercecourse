@@ -33,7 +33,7 @@ class ForgetPassword extends StatelessWidget {
           const SizedBox(height: 10),
           const CustomTextBodyAuth(
               text:
-                  "Sign Up With Your Email And Password OR Continue With Social Media"),
+                  "please Enter Your Email Address To Recive A verification code"),
           const SizedBox(height: 15),
           CustonTextFormAuth(
             mycontroller: controller.email,
@@ -42,10 +42,15 @@ class ForgetPassword extends StatelessWidget {
             labeltext: "Email",
             // mycontroller: ,
           ),
-          CustomButtomAuth(text: "Check", onPressed: () {}),
+          CustomButtomAuth(text: "Check", onPressed: () {
+            controller.goToVerfiyCode() ; 
+          }),
           const SizedBox(height: 40),
         ]),
       ),
     );
   }
 }
+
+
+ 
