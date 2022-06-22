@@ -63,10 +63,7 @@ class SignUp extends StatelessWidget {
             labeltext: "Password",
             // mycontroller: ,
           ),
-          const Text(
-            "Forget Password",
-            textAlign: TextAlign.end,
-          ),
+        
           CustomButtomAuth(text: "Sign Up", onPressed: () {}),
           const SizedBox(height: 40),
           CustomTextSignUpOrSignIn(
