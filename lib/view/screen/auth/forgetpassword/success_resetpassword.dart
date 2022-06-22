@@ -2,8 +2,8 @@ import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
 
-class SuccessSignUp extends StatelessWidget {
-  const SuccessSignUp({Key? key}) : super(key: key);
+class SuccessResetPassword extends StatelessWidget {
+  const SuccessResetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
