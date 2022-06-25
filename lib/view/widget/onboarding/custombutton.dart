@@ -14,10 +14,10 @@ class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 0),
           textColor: Colors.white,
           onPressed: () {
-            controller.next() ; 
+            controller.next();
           },
           color: AppColor.primaryColor,
-          child: const Text("Continue")),
+          child: Text("8".tr)),
     );
   }
 }

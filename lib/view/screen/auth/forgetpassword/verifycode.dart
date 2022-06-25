@@ -1,9 +1,6 @@
-import 'package:ecommercecourse/controller/auth/forgetpassword_controller.dart';
 import 'package:ecommercecourse/controller/auth/verifycode_controller.dart'; 
-import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
+import 'package:ecommercecourse/core/constant/color.dart'; 
+import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart'; 
 import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -42,7 +39,7 @@ class VerfiyCode extends StatelessWidget {
                 fieldWidth: 50.0,
                 borderRadius: BorderRadius.circular(20),
                 numberOfFields: 5,
-                borderColor: Color(0xFF512DA8),
+                borderColor:const  Color(0xFF512DA8),
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in

@@ -1,6 +1,7 @@
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class SuccessResetPassword extends StatelessWidget {
   const SuccessResetPassword({Key? key}) : super(key: key);
@@ -21,19 +22,19 @@ class SuccessResetPassword extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(15),
         child: Column(children: [
-          Center(
+          const Center(
               child: Icon(
             Icons.check_circle_outline,
             size: 200,
             color: AppColor.primaryColor,
           )),
-          Text("...."),
-          Text("...."),
-          Spacer() , 
-          Container(
+          Text("37".tr , style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 30)),
+          Text("36".tr),
+          const Spacer(),
+          SizedBox(
             width: double.infinity,
             child: CustomButtomAuth(
-                text: "Go To Login",
+                text: "31".tr,
                 onPressed: () {
                   // controller.signUp();
                 }),
