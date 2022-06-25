@@ -28,8 +28,12 @@ class SuccessSignUp extends StatelessWidget {
             size: 200,
             color: AppColor.primaryColor,
           )),
-          const Text("...."),
-          const Text("...."),
+          Text("37".tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1!
+                  .copyWith(fontSize: 30)),
+          Text("38".tr),
           const Spacer(),
           SizedBox(
             width: double.infinity,
