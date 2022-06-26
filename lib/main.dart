@@ -1,11 +1,9 @@
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/localization/translation.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/routes.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'core/localization/changelocal.dart';
 
 void main() async {
@@ -16,8 +14,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
@@ -27,9 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
-      home:
-          //  Test(),
-          const Language(),
+      home: const Language(),
       routes: routes,
     );
   }

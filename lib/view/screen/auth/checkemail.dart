@@ -43,7 +43,7 @@ class CheckEmail extends StatelessWidget {
             // mycontroller: ,
           ),
           CustomButtomAuth(text: "30".tr, onPressed: () {
-            controller.goToSuccessSignUp() ; 
+            controller.goToVerfiyCode() ; 
           }),
           const SizedBox(height: 40),
         ]),
