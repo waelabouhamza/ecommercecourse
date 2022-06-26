@@ -8,9 +8,9 @@ class MyTranslation extends Translations {
           "2": "اختر المنتجة",
           "3": "نحن لدينا 100 الف منتج  , اختر \n  منتجك  من  متجرنا",
           "4": "سهل وامن للشراء",
-          "5": "يمكنك الدفع كاش او من خلال بوابات الدفع الالكترونية",
+          "5": "يمكنك الدفع كاش او \n من خلال بوابات الدفع الالكترونية",
           "6": "تتبع طلبك",
-          "7": "يمكنك تتبع طلبك في كل مرحلة وايضا التتبع من خلال الخريطة",
+          "7": "يمكنك تتبع طلبك في كل مرحلة \n وايضا التتبع من خلال الخريطة",
           "8": "متابعه",
           "9": "تسجيل الدخول",
           "10": "اهلا بك",
@@ -31,7 +31,19 @@ class MyTranslation extends Translations {
           "24":
               "انشاء حساب من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
           "25": " لديك حساب ? ",
-          "26": "تسجيل الدخول"
+          "26": "تسجيل الدخول",
+          "27": "فحص البريد الالكتروني",
+          "28": "تم انشاء الحساب بنجاح",
+          "29": "الرجاء ادخال البريد لتلقي رمز التحقق",
+          "30": "فحص",
+          "31": "الذهاب لتسجيل الدخول",
+          "32": "نجاح",
+          "33": "حفظ",
+          "34": "الرجاء ادخال كلمة المرور الجديدة",
+          "35": "الكلمة الجديدة",
+          "36": "تم اعادة تعيين كلمة المرور بنجاح",
+          "37": "تهانينا",
+          "38": "تم التسجيل بنجاح"
         },
         "en": {
           "1": "Choose Language",
@@ -41,7 +53,8 @@ class MyTranslation extends Translations {
           "4": "Easy And Safe Paymnet",
           "5": "You can pay in cash \n or through payment gateways",
           "6": "Track Your Order",
-          "7": "The order can be tracked at every stage \n until it reaches you",
+          "7":
+              "The order can be tracked at every stage \n until it reaches you",
           "8": "Continue",
           "9": "Sign In",
           "10": "Welcome Back",
@@ -62,22 +75,19 @@ class MyTranslation extends Translations {
           "24":
               "Sign Up With Your Email And Password OR Continue With Social Media",
           "25": " have an account ? ",
-          "26": "SignIn" , 
-          "27" : "Check Email" , 
-          "28" : "Success SignUp"  , 
-          "29" : "please Enter Your Email Address To Recive A verification code" , 
-          "30" : "check" , 
-          "31" : "Go To Login" , 
-          "32" : "Success" , 
-          "33" : "save" , 
-          "34" : "Please Enter new Password" , 
-          "35" : "New Password" , 
-          "36" : "Password has been reset successfully" , 
-          "37" : "congratulations" , 
-          "38" : "successfully registered"
-          
-          
-
+          "26": "SignIn",
+          "27": "Check Email",
+          "28": "Account successfully created",
+          "29": "please Enter Your Email Address To Recive A verification code",
+          "30": "check",
+          "31": "Go To Login",
+          "32": "Success",
+          "33": "save",
+          "34": "Please Enter new Password",
+          "35": "New Password",
+          "36": "Password has been reset successfully",
+          "37": "congratulations",
+          "38": "successfully registered"
         }
       };
 }

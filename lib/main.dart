@@ -2,8 +2,7 @@ import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/localization/translation.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/routes.dart';
-import 'package:ecommercecourse/test.dart';
-import 'package:ecommercecourse/view/screen/language.dart'; 
+import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,31 +26,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       locale: controller.language,
-      theme: ThemeData(
-        fontFamily: "PlayfairDisplay",
-        textTheme: const TextTheme(
-            headline1: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: AppColor.black),
-            headline2: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 26,
-                color: AppColor.black),
-            bodyText1: TextStyle(
-                height: 2,
-                color: AppColor.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 14),
-            bodyText2: TextStyle(
-                height: 2,
-                color: AppColor.grey,
-                fontSize: 14)),
-        primarySwatch: Colors.blue,
-      ),
+      theme: controller.appTheme,
       home:
-        //  Test(),
-       const Language(),
+          //  Test(),
+          const Language(),
       routes: routes,
     );
   }
