@@ -7,30 +7,35 @@ abstract class ResetPasswordController extends GetxController {
   goToSuccessResetPassword();
 }
 
-class ResetPasswordControllerImp extends ResetPasswordController { 
-  
-  late TextEditingController password; 
-  late TextEditingController repassword; 
+class ResetPasswordControllerImp extends ResetPasswordController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+  late TextEditingController password;
+  late TextEditingController repassword;
 
   @override
   resetpassword() {}
 
   @override
   goToSuccessResetPassword() {
-    Get.offNamed(AppRoute.successResetpassword);
+    if (formstate.currentState!.validate()) {
+      Get.offNamed(AppRoute.successResetpassword);
+    } else {
+      print("Not Valid");
+    }
   }
 
   @override
-  void onInit() { 
-    password = TextEditingController(); 
-    repassword = TextEditingController(); 
+  void onInit() {
+    password = TextEditingController();
+    repassword = TextEditingController();
     super.onInit();
   }
 
   @override
-  void dispose() { 
-    password.dispose(); 
-    repassword.dispose(); 
+  void dispose() {
+    password.dispose();
+    repassword.dispose();
     super.dispose();
   }
 }

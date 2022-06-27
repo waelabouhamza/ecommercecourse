@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CustonTextFormAuth extends StatelessWidget {
+class CustomTextFormAuth extends StatelessWidget {
   final String hinttext;
   final String labeltext;
   final IconData iconData;
   final TextEditingController? mycontroller;
+  final String? Function(String?) valid;
+  final bool isNumber;
 
-  const CustonTextFormAuth(
+  const CustomTextFormAuth(
       {Key? key,
       required this.hinttext,
       required this.labeltext,
       required this.iconData,
-      required this.mycontroller})
+      required this.mycontroller,
+      required this.valid,
+      required this.isNumber})
       : super(key: key);
 
   @override
@@ -19,6 +23,10 @@ class CustonTextFormAuth extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
+        keyboardType: isNumber
+            ? const TextInputType.numberWithOptions(decimal: true)
+            : TextInputType.text,
+        validator: valid,
         controller: mycontroller,
         decoration: InputDecoration(
             hintText: hinttext,
