@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       locale: controller.language,
-      theme: controller.appTheme,
-      home: const Language(),
-      routes: routes,
+      theme: controller.appTheme, 
+      // routes: routes,
+      getPages: routes,
     );
   }
 }
