@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme, 
+      initialBinding: ,
       // routes: routes,
       getPages: routes,
     );
