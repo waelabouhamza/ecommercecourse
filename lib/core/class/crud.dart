@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/checkinternet.dart';
