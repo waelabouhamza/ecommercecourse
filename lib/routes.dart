@@ -15,10 +15,10 @@ import 'package:ecommercecourse/view/screen/onboarding.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
-  // GetPage(name: "/", page: () => const Language() , middlewares: [
-  //   MyMiddleWare()
-  // ]),
-  GetPage(name: "/", page: () => TestView()),
+  GetPage(name: "/", page: () => const Language() , middlewares: [
+    MyMiddleWare()
+  ]),
+  // GetPage(name: "/", page: () => TestView()),
 
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
