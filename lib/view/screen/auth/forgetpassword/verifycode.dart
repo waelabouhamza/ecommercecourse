@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/auth/verifycode_controller.dart'; 
+import 'package:ecommercecourse/controller/forgetpassword/verifycode_controller.dart'; 
 import 'package:ecommercecourse/core/constant/color.dart'; 
 import 'package:ecommercecourse/view/widget/auth/customtextbodyauth.dart'; 
 import 'package:ecommercecourse/view/widget/auth/customtexttitleauth.dart'; 
@@ -48,7 +48,7 @@ class VerfiyCode extends StatelessWidget {
                 },
                 //runs when every textfield is filled
                 onSubmit: (String verificationCode) {
-                     controller.goToResetPassword() ; 
+                     controller.goToResetPassword(verificationCode) ; 
                 }, // end onSubmit
               ), 
           const SizedBox(height: 40),
