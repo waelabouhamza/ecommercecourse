@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/forgetpassword/forgetpassword_controller.dart';
+import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
@@ -26,12 +27,9 @@ class ForgetPassword extends StatelessWidget {
                 .copyWith(color: AppColor.grey)),
       ),
       body: GetBuilder<ForgetPasswordControllerImp>(
-          builder: (controller) => controller.statusRequest ==
-                  StatusRequest.loading
-              ? Center(
-                  child: Text("Loading ..."),
-                )
-              : Container(
+          builder: (controller) =>  
+          HandlingDataRequest( statusRequest: controller.statusRequest, widget: 
+           Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   child: Form(
@@ -61,7 +59,7 @@ class ForgetPassword extends StatelessWidget {
                       const SizedBox(height: 40),
                     ]),
                   ),
-                )),
+                ))),
     );
   }
 }

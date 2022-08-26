@@ -15,7 +15,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
   VerifyCodeForgetPasswordData verifyCodeForgetPasswordData =
       VerifyCodeForgetPasswordData(Get.find());
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   checkCode() {}
