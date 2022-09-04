@@ -14,6 +14,7 @@ class Crud {
         if (response.statusCode == 200 || response.statusCode == 201) {
           Map responsebody = jsonDecode(response.body);
           print(responsebody) ; 
+          
           return Right(responsebody);
         } else {
           return const Left(StatusRequest.serverfailure);

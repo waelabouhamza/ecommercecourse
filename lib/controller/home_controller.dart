@@ -33,6 +33,7 @@ class HomeControllerImp extends HomeController {
 
   @override
   void onInit() {
+    getdata() ; 
     initialData();
     super.onInit();
   }
