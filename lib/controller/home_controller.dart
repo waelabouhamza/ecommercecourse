@@ -4,10 +4,9 @@ import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/home_data.dart';
 import 'package:get/get.dart';
 
-abstract class  HomeController extends GetxController {
- initialData()  ;
- getdata() ;  
-
+abstract class HomeController extends GetxController {
+  initialData();
+  getdata();
 }
 
 class HomeControllerImp extends HomeController {
@@ -16,39 +15,40 @@ class HomeControllerImp extends HomeController {
   String? username;
   String? id;
 
- HomeData homedata = HomeData(Get.find());
+  HomeData homedata = HomeData(Get.find());
 
   // List data = [];
   List categories = [];
+  List items = [];
   // List items = [];
 
   late StatusRequest statusRequest;
 
   @override
   initialData() {
-
-    username = myServices.sharedPreferences.getString("username") ; 
-    id = myServices.sharedPreferences.getString("id") ; 
+    username = myServices.sharedPreferences.getString("username");
+    id = myServices.sharedPreferences.getString("id");
   }
 
   @override
   void onInit() {
-    getdata() ; 
+    getdata();
     initialData();
     super.onInit();
   }
-  
+
   @override
   getdata() async {
-        statusRequest = StatusRequest.loading;
+    statusRequest = StatusRequest.loading;
     var response = await homedata.getData();
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         categories.addAll(response['categories']);
+        items.addAll(response['items']);
       } else {
-        statusRequest = StatusRequest.failure ; 
+        statusRequest = StatusRequest.failure;
       }
     }
     update();
