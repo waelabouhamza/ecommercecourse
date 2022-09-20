@@ -1,6 +1,6 @@
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/view/widget/home/customappbar.dart';
+import 'package:ecommercecourse/view/widget/customappbar.dart';
 import 'package:ecommercecourse/view/widget/home/customcardhome.dart';
 import 'package:ecommercecourse/view/widget/home/customtitlehome.dart';
 import 'package:ecommercecourse/view/widget/home/listcategorieshome.dart';
@@ -31,8 +31,8 @@ class HomePage extends StatelessWidget {
                     const ListCategoriesHome(),
                     const CustomTitleHome(title: "Product for you"),
                     const ListItemsHome(),
-                    const CustomTitleHome(title: "Offer"),
-                    const ListItemsHome()
+                    // const CustomTitleHome(title: "Offer"),
+                    // const ListItemsHome()
                   ],
                 ))));
   }

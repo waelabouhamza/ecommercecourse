@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 class CustomBottomAppBarHome extends StatelessWidget {
   const CustomBottomAppBarHome({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenControllerImp>(
