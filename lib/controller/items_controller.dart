@@ -5,12 +5,13 @@ import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
   intialData();
-  changeCat(int val);
-  getItems();
+  changeCat(int val, String catval);
+  getItems(String categoryid);
 }
 
 class ItemsControllerImp extends ItemsController {
   List categories = [];
+  String? catid;
   int? selectedCat;
 
   ItemsData testData = ItemsData(Get.find());
@@ -29,19 +30,23 @@ class ItemsControllerImp extends ItemsController {
   intialData() {
     categories = Get.arguments['categories'];
     selectedCat = Get.arguments['selectedcat'];
-    getItems();
+    catid = Get.arguments['catid'];
+    getItems(catid!);
   }
 
   @override
-  changeCat(val) {
+  changeCat(val, catval) {
     selectedCat = val;
+    catid = catval;
+    getItems(catid!);
     update();
   }
 
   @override
-  getItems() async {
+  getItems(categoryid) async {
+    data.clear();
     statusRequest = StatusRequest.loading;
-    var response = await testData.getData();
+    var response = await testData.getData(categoryid);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
