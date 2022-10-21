@@ -1,6 +1,7 @@
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/controller/items_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/functions/translatefatabase.dart';
 import 'package:ecommercecourse/data/model/categoriesmodel.dart';
 import 'package:ecommercecourse/linkapi.dart';
 import 'package:flutter/material.dart';
@@ -41,22 +42,21 @@ class Categories extends GetView<ItemsControllerImp> {
     return InkWell(
       onTap: () {
         // controller.goToItems(controller.categories, i!);
-        controller.changeCat(i! , categoriesModel.categoriesId!);
+        controller.changeCat(i!, categoriesModel.categoriesId!);
       },
       child: Column(
         children: [
           GetBuilder<ItemsControllerImp>(
               builder: (controller) => Container(
-
-                    padding: EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
+                    padding:const  EdgeInsets.only(right: 10, left: 10, bottom: 5),
                     decoration: controller.selectedCat == i
-                        ? BoxDecoration(
+                        ?const BoxDecoration(
                             border: Border(
                                 bottom: BorderSide(
                                     width: 3, color: AppColor.primaryColor)))
                         : null,
                     child: Text(
-                      "${categoriesModel.categoriesName}",
+                      "${translateDatabase(categoriesModel.categoriesNamaAr, categoriesModel.categoriesName)}",
                       style:
                           const TextStyle(fontSize: 20, color: AppColor.grey2),
                     ),

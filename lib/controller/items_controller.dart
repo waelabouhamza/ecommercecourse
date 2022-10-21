@@ -1,12 +1,14 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
 import 'package:ecommercecourse/data/datasource/remote/items_data.dart';
+import 'package:ecommercecourse/data/model/itemsmodel.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
   intialData();
   changeCat(int val, String catval);
   getItems(String categoryid);
+  goToPageProductDetails(ItemsModel itemsModel);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -59,5 +61,10 @@ class ItemsControllerImp extends ItemsController {
       // End
     }
     update();
+  }
+
+  @override
+  goToPageProductDetails(itemsModel) {
+    Get.toNamed("productdetails", arguments: {"itemsmodel": itemsModel});
   }
 }
