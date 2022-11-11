@@ -44,9 +44,11 @@ class ProductDetails extends StatelessWidget {
               PriceAndCountItems(
                   onAdd: () {}, onRemove: () {}, price: "200.0", count: "2"),
               const SizedBox(height: 10),
-              Text(
-                  "${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc}",
-                  style: Theme.of(context).textTheme.bodyText1),
+              Text("${controller.itemsModel.itemsDesc}",
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300,
+                      color: AppColor.grey2)),
               const SizedBox(height: 10),
               Text("Color",
                   style: Theme.of(context).textTheme.headline1!.copyWith(
