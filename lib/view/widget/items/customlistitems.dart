@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommercecourse/controller/favorite_controller.dart';
 import 'package:ecommercecourse/controller/items_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/functions/translatefatabase.dart';
@@ -10,9 +11,7 @@ import 'package:get/get.dart';
 class CustomListItems extends GetView<ItemsControllerImp> {
   final ItemsModel itemsModel;
   // final bool active;
-  const CustomListItems(
-      {Key? key, required this.itemsModel })
-      : super(key: key);
+  const CustomListItems({Key? key, required this.itemsModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,16 +72,27 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "sans")),
-                      IconButton(
-                          onPressed: () {
-                            
-                          },
-                          icon: Icon(
-                            itemsModel.favorite == "1"
-                                ? Icons.favorite
-                                : Icons.favorite_border_outlined,
-                            color: AppColor.primaryColor,
-                          ))
+                      GetBuilder<FavoriteController>(
+                          builder: (controller) => IconButton(
+                              onPressed: () {
+                                if (controller.isFavorite[itemsModel.itemsId] ==
+                                    "1") {
+                                  controller.setFavorite(
+                                      itemsModel.itemsId, "0");
+                                  controller
+                                      .removeFavorite(itemsModel.itemsId!);
+                                } else {
+                                  controller.setFavorite(
+                                      itemsModel.itemsId, "1");
+                                  controller.addFavorite(itemsModel.itemsId!);
+                                }
+                              },
+                              icon: Icon(
+                                controller.isFavorite[itemsModel.itemsId] == "1"
+                                    ? Icons.favorite
+                                    : Icons.favorite_border_outlined,
+                                color: AppColor.primaryColor,
+                              )))
                     ],
                   )
                 ]),
@@ -90,6 +100,34 @@ class CustomListItems extends GetView<ItemsControllerImp> {
         ));
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // logical thinking
