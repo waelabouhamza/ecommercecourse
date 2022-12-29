@@ -1,7 +1,5 @@
 class AppLink {
-static const String server = "https://waelabohamza.com/ecommercee";
-  
-static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
+ 
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
   static const String imagestItems = "$imageststatic/items";
@@ -34,4 +32,5 @@ static const String imageststatic = "https://waelabohamza.com/ecommercee/upload"
   static const String favoriteAdd = "$server/favorite/add.php";
   static const String favoriteRemove = "$server/favorite/remove.php";
   static const String favoriteView = "$server/favorite/view.php";
+  static const String deletefromfavroite = "$server/favorite/deletefromfavroite.php";
 }

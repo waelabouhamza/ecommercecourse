@@ -1,9 +1,9 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/core/services/services.dart'; 
+import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/myfavorite_data.dart';
 import 'package:ecommercecourse/data/model/myfavorite.dart';
-import 'package:get/get.dart'; 
+import 'package:get/get.dart';
 
 class MyFavoriteController extends GetxController {
   MyFavoriteData favoriteData = MyFavoriteData(Get.find());
@@ -36,6 +36,14 @@ class MyFavoriteController extends GetxController {
       }
       // End
     }
+    update();
+  }
+
+  deleteFromFavorite(String favroiteid) {
+    // data.clear();
+    // statusRequest = StatusRequest.loading;
+    var response = favoriteData.deleteData(favroiteid);
+    data.removeWhere((element) => element.favoriteId == favroiteid);
     update();
   }
 

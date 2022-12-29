@@ -2,6 +2,7 @@ import 'package:ecommercecourse/controller/myfavoritecontroller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/customappbar.dart';
+import 'package:ecommercecourse/view/widget/myfavorite/customlistfavoriteitems.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,6 +25,7 @@ class MyFavorite extends StatelessWidget {
                       Get.toNamed(AppRoute.myfavroite);
                     },
                   ),
+                  SizedBox(height: 20) ,
                   HandlingDataView(
                       statusRequest: controller.statusRequest,
                       widget: GridView.builder(
@@ -32,9 +34,9 @@ class MyFavorite extends StatelessWidget {
                         itemCount: controller.data.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2),
+                                crossAxisCount: 2, childAspectRatio: 0.7),
                         itemBuilder: (context, index) {
-                          return Text(controller.data[index].itemsName!);
+                          return  CustomListFavoriteItems(itemsModel: controller.data[index]) ; 
                         },
                       ))
                 ]))),
