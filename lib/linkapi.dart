@@ -1,5 +1,9 @@
 class AppLink {
- 
+// static const String server = "https://waelabohamza.com/ecommercee";
+  static const String server = "https://b2b-go.com/ecommerce";
+
+  static const String imageststatic = "https://b2b-go.com/ecommerce/upload";
+// static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
   static const String imagestItems = "$imageststatic/items";
@@ -12,6 +16,7 @@ class AppLink {
   static const String signUp = "$server/auth/signup.php";
   static const String login = "$server/auth/login.php";
   static const String verifycodessignup = "$server/auth/verfiycode.php";
+  static const String resend = "$server/auth/resend.php";
 
 // ================================= ForgetPassword ========================== //
 
