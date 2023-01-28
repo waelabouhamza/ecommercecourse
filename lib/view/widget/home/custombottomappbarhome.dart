@@ -18,8 +18,8 @@ class CustomBottomAppBarHome extends StatelessWidget {
                   return index == 2
                       ? const Spacer()
                       : CustomButtonAppBar(
-                          textbutton: controller.titlebottomappbar[i],
-                          icondata: Icons.home,
+                          textbutton: controller.bottomappbar[i]['title'],
+                          icondata: controller.bottomappbar[i]['icon'],
                           onPressed: () {
                             controller.changePage(i);
                           },

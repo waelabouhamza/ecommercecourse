@@ -21,8 +21,7 @@ class Items extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: ListView(children: [
           CustomAppBar(
-            titleappbar: "Find Product",
-            onPressedIcon: () {},
+            titleappbar: "Find Product", 
             onPressedSearch: () {},
             onPressedIconFavorite: () {
               

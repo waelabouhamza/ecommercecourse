@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final String titleappbar ; 
-  final void Function()? onPressedIcon ; 
-  final void Function()? onPressedIconFavorite ; 
-  final void Function()? onPressedSearch ; 
-  const CustomAppBar({Key? key, required this.titleappbar, this.onPressedIcon, this.onPressedSearch,required this.onPressedIconFavorite}) : super(key: key);
+  final String titleappbar;
+  final void Function()? onPressedIconFavorite;
+  final void Function()? onPressedSearch;
+  const CustomAppBar(
+      {Key? key,
+      required this.titleappbar,
+      this.onPressedSearch,
+      required this.onPressedIconFavorite})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +19,8 @@ class CustomAppBar extends StatelessWidget {
         Expanded(
             child: TextFormField(
           decoration: InputDecoration(
-              prefixIcon: IconButton(icon: Icon(Icons.search) , onPressed: onPressedSearch),
+              prefixIcon: IconButton(
+                  icon: Icon(Icons.search), onPressed: onPressedSearch),
               hintText: titleappbar,
               hintStyle: TextStyle(fontSize: 18),
               border: OutlineInputBorder(
@@ -25,21 +30,7 @@ class CustomAppBar extends StatelessWidget {
               fillColor: Colors.grey[200]),
         )),
         SizedBox(width: 10),
-        Container(  
-          decoration: BoxDecoration(
-              color: Colors.grey[200], borderRadius: BorderRadius.circular(10)),
-          width: 60,
-          padding: EdgeInsets.symmetric(vertical: 8),
-          child: IconButton(
-              onPressed: onPressedIcon,
-              icon: Icon(
-                Icons.notifications_active_outlined,
-                size: 30,
-                color: Colors.grey[600],
-              )),
-        ) , 
-         SizedBox(width: 10),
-        Container(  
+        Container(
           decoration: BoxDecoration(
               color: Colors.grey[200], borderRadius: BorderRadius.circular(10)),
           width: 60,
