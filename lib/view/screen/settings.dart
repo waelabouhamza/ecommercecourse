@@ -1,6 +1,6 @@
+import 'package:ecommercecourse/controller/settings_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/imgaeasset.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +9,7 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SettingsController controller = Get.put(SettingsController());
     return Container(
       child: ListView(
         children: [
@@ -37,16 +38,32 @@ class Settings extends StatelessWidget {
             child: Card(
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 ListTile(
-                  title: Text("title one"),
+                  // onTap: () {},  
+                  trailing:  Switch(onChanged: (val){} ,value: true ),
+                  title: Text("Disable Notificatios"),
                 ),
-                Divider() , 
                 ListTile(
-                  title: Text("title one"),
+                  onTap: () {},
+                  trailing: Icon(Icons.location_on_outlined),
+                  title: Text("Address"),
                 ),
-                    Divider() , 
                 ListTile(
-                  title: Text("title one"),
-                )
+                  onTap: () {},
+                  trailing: Icon(Icons.help_outline_rounded),
+                  title: Text("About us"),
+                ),
+                ListTile(
+                  onTap: () {},
+                  trailing: Icon(Icons.phone_callback_outlined),
+                  title: Text("Contact us"),
+                ),
+                ListTile(
+                  onTap: () {
+                    controller.logout();
+                  },
+                  title: Text("Logout"),
+                  trailing: Icon(Icons.exit_to_app),
+                ),
               ]),
             ),
           )

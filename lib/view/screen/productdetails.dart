@@ -1,7 +1,6 @@
 import 'package:ecommercecourse/controller/productdetails_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/widget/productdetails/priceandcount.dart';
-import 'package:ecommercecourse/view/widget/productdetails/subitemslist.dart';
+import 'package:ecommercecourse/view/widget/productdetails/priceandcount.dart'; 
 import 'package:ecommercecourse/view/widget/productdetails/toppageproductdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -50,12 +49,12 @@ class ProductDetails extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                       color: AppColor.grey2)),
               const SizedBox(height: 10),
-              Text("Color",
-                  style: Theme.of(context).textTheme.headline1!.copyWith(
-                        color: AppColor.fourthColor,
-                      )),
-              const SizedBox(height: 10),
-              const SubitemsList()
+              // Text("Color",
+              //     style: Theme.of(context).textTheme.headline1!.copyWith(
+              //           color: AppColor.fourthColor,
+              //         )),
+              // const SizedBox(height: 10),
+              // const SubitemsList()
             ]),
           )
         ]));

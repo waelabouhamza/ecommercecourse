@@ -1,6 +1,6 @@
 class AppLink {
 // static const String server = "https://waelabohamza.com/ecommercee";
-  
+ 
 // static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
