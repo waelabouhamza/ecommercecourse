@@ -1,6 +1,8 @@
 class AppLink {
 // static const String server = "https://waelabohamza.com/ecommercee";
- 
+  static const String server = "https://b2b-go.com/ecommerce";
+
+  static const String imageststatic = "https://b2b-go.com/ecommerce/upload";
 // static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
@@ -36,4 +38,12 @@ class AppLink {
   static const String favoriteRemove = "$server/favorite/remove.php";
   static const String favoriteView = "$server/favorite/view.php";
   static const String deletefromfavroite = "$server/favorite/deletefromfavroite.php";
+
+  // Cart 
+  static const String cartview   = "$server/cart/view.php";
+  static const String cartadd    = "$server/cart/add.php";
+  static const String cartdelete = "$server/cart/delete.php";
+  static const String cartgetcountitems = "$server/cart/getcountitems.php";
+
+
 }
