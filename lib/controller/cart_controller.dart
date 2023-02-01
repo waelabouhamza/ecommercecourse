@@ -21,6 +21,7 @@ class CartController extends GetxController {
 
   add(String itemsid) async {
     statusRequest = StatusRequest.loading;
+    update();
     var response = await cartData.addCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
     print("=============================== Controller $response ");
@@ -37,10 +38,13 @@ class CartController extends GetxController {
       }
       // End
     }
+    update();
   }
 
   delete(String itemsid) async {
     statusRequest = StatusRequest.loading;
+    update();
+
     var response = await cartData.deleteCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
     print("=============================== Controller $response ");
@@ -57,32 +61,25 @@ class CartController extends GetxController {
       }
       // End
     }
+    update();
   }
 
-  getCountItems(String itemsid) async {
-    statusRequest = StatusRequest.loading;
-    var response = await cartData.getCountCart(
-        myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
-    statusRequest = handlingData(response);
-    if (StatusRequest.success == statusRequest) {
-      // Start backend
-      if (response['status'] == "success") {
-        int countitems = 0;
-        countitems = int.parse(response['data']);
-        print("==================================");
-        print("$countitems");
-        return countitems;
-        // data.addAll(response['data']);
-      } else {
-        statusRequest = StatusRequest.failure;
-      }
-      // End
-    }
+ 
+
+  resetVarCart() {
+    totalcountitems = 0;
+    priceorders = 0.0;
+    data.clear();
+  }
+
+  refreshPage() {
+    resetVarCart();
+    view();
   }
 
   view() async {
     statusRequest = StatusRequest.loading;
+    update();
     var response =
         await cartData.viewCart(myServices.sharedPreferences.getString("id")!);
     print("=============================== Controller $response ");
@@ -90,17 +87,21 @@ class CartController extends GetxController {
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
-        List dataresponse = response['datacart'];
-        Map dataresponsecountprice = response['countprice'];
-        data.addAll(dataresponse.map((e) => CartModel.fromJson(e)));
-        totalcountitems = int.parse(dataresponsecountprice['totalcount']);
-        priceorders = double.parse(dataresponsecountprice['totalprice']);
+        if (response['datacart']['status'] == 'success') {
+          List dataresponse = response['datacart']['data'];
+          Map dataresponsecountprice = response['countprice'];
+          data.clear();
+          data.addAll(dataresponse.map((e) => CartModel.fromJson(e)));
+          totalcountitems = int.parse(dataresponsecountprice['totalcount']);
+          priceorders = double.parse(dataresponsecountprice['totalprice']);
+          print(priceorders);
+        }
       } else {
         statusRequest = StatusRequest.failure;
       }
       // End
     }
-    update() ; 
+    update();
   }
 
   @override
