@@ -1,6 +1,8 @@
 class AppLink {
 // static const String server = "https://waelabohamza.com/ecommercee";
-  
+  static const String server = "https://b2b-go.com/ecommerce";
+
+  static const String imageststatic = "https://b2b-go.com/ecommerce/upload";
 // static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
@@ -29,6 +31,7 @@ class AppLink {
   static const String homepage = "$server/home.php";
 // items
   static const String items = "$server/items/items.php";
+  static const String searchitems = "$server/items/search.php";
 
 // Favorite
 
