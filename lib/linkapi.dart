@@ -1,8 +1,5 @@
 class AppLink {
-// static const String server = "https://waelabohamza.com/ecommercee";
-  static const String server = "https://b2b-go.com/ecommerce";
-
-  static const String imageststatic = "https://b2b-go.com/ecommerce/upload";
+// static const String server = "https://waelabohamza.com/ecommercee"; 
 // static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
@@ -38,13 +35,24 @@ class AppLink {
   static const String favoriteAdd = "$server/favorite/add.php";
   static const String favoriteRemove = "$server/favorite/remove.php";
   static const String favoriteView = "$server/favorite/view.php";
-  static const String deletefromfavroite = "$server/favorite/deletefromfavroite.php";
+  static const String deletefromfavroite =
+      "$server/favorite/deletefromfavroite.php";
 
-  // Cart 
-  static const String cartview   = "$server/cart/view.php";
-  static const String cartadd    = "$server/cart/add.php";
+  // Cart
+  static const String cartview = "$server/cart/view.php";
+  static const String cartadd = "$server/cart/add.php";
   static const String cartdelete = "$server/cart/delete.php";
   static const String cartgetcountitems = "$server/cart/getcountitems.php";
 
+  // Address
+
+  static const String addressView = "$server/address/view.php";
+  static const String addressAdd = "$server/address/add.php";
+  static const String addressEdit = "$server/address/edit.php";
+  static const String addressDelete = "$server/address/delete.php";
+
+  // Coupon 
+
+  static const String checkcoupon  = "$server/coupon/checkcoupon.php";
 
 }

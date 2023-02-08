@@ -17,9 +17,14 @@ class Cart extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: GetBuilder<CartController>(
             builder: (controller) => BottomNavgationBarCart(
+                shipping: "0",
+                controllercoupon: controller.controllercoupon!,
+                onApplyCoupon: () {
+                  controller.checkcoupon();
+                },
                 price: "${cartController.priceorders}",
-                shipping: "300",
-                totalprice: "1500")),
+                discount: "${controller.discountcoupon}%",
+                totalprice: "${controller.getTotalPrice()}")),
         body: GetBuilder<CartController>(
             builder: ((controller) => HandlingDataView(
                 statusRequest: controller.statusRequest,
@@ -44,8 +49,8 @@ class Cart extends StatelessWidget {
                                       .add(cartController.data[index].itemsId!);
                                   cartController.refreshPage();
                                 },
-                                onRemove: () async  {
-                                 await cartController.delete(
+                                onRemove: () async {
+                                  await cartController.delete(
                                       cartController.data[index].itemsId!);
                                   cartController.refreshPage();
                                 },
