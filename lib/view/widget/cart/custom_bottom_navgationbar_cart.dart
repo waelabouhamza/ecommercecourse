@@ -2,6 +2,7 @@
 
 import 'package:ecommercecourse/controller/cart_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/view/widget/cart/buttoncart.dart';
 import 'package:ecommercecourse/view/widget/cart/custombuttoncoupon.dart';
 import 'package:flutter/material.dart';
@@ -121,8 +122,10 @@ class BottomNavgationBarCart extends StatelessWidget {
         ),
         SizedBox(height: 10),
         CustomButtonCart(
-          textbutton: "Place Order",
-          onPressed: () {},
+          textbutton: "Order",
+          onPressed: () { 
+            Get.toNamed(AppRoute.checkout) ; 
+          },
         )
       ],
     ));

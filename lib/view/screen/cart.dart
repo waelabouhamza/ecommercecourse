@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:ecommercecourse/controller/cart_controller.dart';
 import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/view/widget/cart/appbarcart.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/view/widget/cart/custom_bottom_navgationbar_cart.dart';
 import 'package:ecommercecourse/view/widget/cart/customitemscartlist.dart';
 import 'package:ecommercecourse/view/widget/cart/topcardCart.dart';
@@ -15,6 +15,9 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     CartController cartController = Get.put(CartController());
     return Scaffold(
+        appBar: AppBar(
+          title: Text("My Cart"),
+        ),
         bottomNavigationBar: GetBuilder<CartController>(
             builder: (controller) => BottomNavgationBarCart(
                 shipping: "0",
@@ -30,9 +33,6 @@ class Cart extends StatelessWidget {
                 statusRequest: controller.statusRequest,
                 widget: ListView(
                   children: [
-                    TopAppbarCart(
-                      title: 'My Cart',
-                    ),
                     SizedBox(height: 10),
                     TopCardCart(
                         message:

@@ -1,8 +1,9 @@
 import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/middleware/mymiddleware.dart';
-import 'package:ecommercecourse/view/address/add.dart';
-import 'package:ecommercecourse/view/address/adddetails.dart';
-import 'package:ecommercecourse/view/address/view.dart';
+import 'package:ecommercecourse/test_view.dart';
+import 'package:ecommercecourse/view/screen/address/add.dart';
+import 'package:ecommercecourse/view/screen/address/adddetails.dart';
+import 'package:ecommercecourse/view/screen/address/view.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommercecourse/view/screen/auth/login.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/resetpassword.dart';
@@ -12,6 +13,7 @@ import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:ecommercecourse/view/screen/auth/verifycodesignup.dart';
 import 'package:ecommercecourse/view/screen/cart.dart';
+import 'package:ecommercecourse/view/screen/checkout.dart'; 
 import 'package:ecommercecourse/view/screen/homescreen.dart';
 import 'package:ecommercecourse/view/screen/items.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
@@ -23,6 +25,7 @@ import 'package:get/get.dart';
 List<GetPage<dynamic>>? routes = [
   GetPage(
       name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
+  // GetPage(name: "/", page: () =>   TestView()),
   GetPage(name: AppRoute.cart, page: () => const Cart()),
 //  Auth
   GetPage(name: AppRoute.login, page: () => const Login()),
@@ -45,5 +48,7 @@ List<GetPage<dynamic>>? routes = [
   //
   GetPage(name: AppRoute.addressview, page: () => const AddressView()),
   GetPage(name: AppRoute.addressadd, page: () => const AddressAdd()),
-  GetPage(name: AppRoute.addressadddetails, page: () => const AddressAddDetails()),
+  GetPage(name: AppRoute.checkout, page: () => const Checkout()),
+  GetPage(
+      name: AppRoute.addressadddetails, page: () => const AddressAddDetails()), 
 ];
