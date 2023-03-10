@@ -1,11 +1,13 @@
+import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/statusrequest.dart';
 import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/myfavorite_data.dart';
 import 'package:ecommercecourse/data/model/myfavorite.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyFavoriteController extends GetxController {
+class MyFavoriteController extends SearchMixController {
   MyFavoriteData favoriteData = MyFavoriteData(Get.find());
 
   List<MyFavoriteModel> data = [];
@@ -49,6 +51,7 @@ class MyFavoriteController extends GetxController {
 
   @override
   void onInit() {
+    search = TextEditingController();
     getData();
     super.onInit();
   }

@@ -80,6 +80,7 @@ dependencies:
   flutter_otp_text_field: ^1.0.1
   lottie: ^1.4.1
   timelines: ^0.1.0
+  flutter_ringtone_player: ^3.2.0
 
 dev_dependencies:
   flutter_test:

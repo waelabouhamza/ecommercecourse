@@ -39,13 +39,27 @@ class Settings extends StatelessWidget {
             child: Card(
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 ListTile(
-                  // onTap: () {},  
-                  trailing:  Switch(onChanged: (val){} ,value: true ),
+                  // onTap: () {},
+                  trailing: Switch(onChanged: (val) {}, value: true),
                   title: Text("Disable Notificatios"),
                 ),
                 ListTile(
                   onTap: () {
-                    Get.toNamed(AppRoute.addressview)  ;
+                    Get.toNamed(AppRoute.orderspending);
+                  },
+                  trailing: Icon(Icons.card_travel),
+                  title: Text("Orders"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoute.ordersarchive );
+                  },
+                  trailing: Icon(Icons.card_travel),
+                  title: Text("Archive"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoute.addressview);
                   },
                   trailing: Icon(Icons.location_on_outlined),
                   title: Text("Address"),

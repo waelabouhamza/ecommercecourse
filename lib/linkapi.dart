@@ -1,12 +1,12 @@
-class AppLink {
-// static const String server = "https://waelabohamza.com/ecommercee"; 
-// static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";
+class AppLink { 
 //========================== Image ============================
   static const String imagestCategories = "$imageststatic/categories";
   static const String imagestItems = "$imageststatic/items";
 // =============================================================
 //
   static const String test = "$server/test.php";
+
+  static const String notification = "$server/notification.php";
 
 // ================================= Auth ========================== //
 
@@ -54,5 +54,14 @@ class AppLink {
   // Coupon 
 
   static const String checkcoupon  = "$server/coupon/checkcoupon.php";
+  
+  // Checkout 
+
+  static const String checkout  = "$server/orders/checkout.php";
+  
+  static const String pendingorders  = "$server/orders/pending.php";
+  static const String ordersarchive  = "$server/orders/archive.php";
+  static const String ordersdetails  = "$server/orders/details.php";
+  static const String ordersdelete  = "$server/orders/delete.php";
 
 }

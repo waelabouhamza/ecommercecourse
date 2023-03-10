@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/class/statusrequest.dart';
+import 'package:ecommercecourse/core/constant/routes.dart';
 import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/data/datasource/remote/cart_data.dart';
@@ -13,7 +14,10 @@ class CartController extends GetxController {
   CartData cartData = CartData(Get.find());
 
   int? discountcoupon = 0;
+
   String? couponname;
+
+  String? couponid;
 
   late StatusRequest statusRequest;
 
@@ -49,9 +53,17 @@ class CartController extends GetxController {
     update();
   }
 
+  goToPageCheckout() {
+    if (data.isEmpty) return Get.snackbar("تنبيه", "السله فارغه");
+    Get.toNamed(AppRoute.checkout, arguments: {
+      "couponid": couponid ?? "0",
+      "priceorder": priceorders.toString() , 
+      "discountcoupon" : discountcoupon.toString()
+    });
+  }
 
-  getTotalPrice(){
-   return (priceorders - priceorders * discountcoupon! / 100 )   ; 
+  getTotalPrice() {
+    return (priceorders - priceorders * discountcoupon! / 100);
   }
 
   delete(String itemsid) async {
@@ -90,12 +102,14 @@ class CartController extends GetxController {
         Map<String, dynamic> datacoupon = response['data'];
         couponModel = CouponModel.fromJson(datacoupon);
         discountcoupon = int.parse(couponModel!.couponDiscount!);
-        couponname = couponModel!.couponName ; 
+        couponname = couponModel!.couponName;
+        couponid = couponModel!.couponId;
       } else {
         // statusRequest = StatusRequest.failure;
-        discountcoupon = 0 ; 
-        couponname = null ; 
-
+        discountcoupon = 0;
+        couponname = null;
+        couponid = null;
+        Get.snackbar("Warning", "Coupon Not Valid") ;
       }
       // End
     }

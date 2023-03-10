@@ -23,7 +23,9 @@ class Checkout extends StatelessWidget {
           child: MaterialButton(
             color: AppColor.secondColor,
             textColor: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              controller.checkout();
+            },
             child: const Text("Checkout",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           )),
@@ -44,22 +46,22 @@ class Checkout extends StatelessWidget {
                       const SizedBox(height: 10),
                       InkWell(
                         onTap: () {
-                          controller.choosePaymentMethod("cash");
+                          controller.choosePaymentMethod("0");
                         },
                         child: CardPaymentMethodCheckout(
                             title: "Cash On Delivery",
-                            isActive: controller.paymentMethod == "cash"
+                            isActive: controller.paymentMethod == "0" // cash
                                 ? true
                                 : false),
                       ),
                       const SizedBox(height: 10),
                       InkWell(
                         onTap: () {
-                          controller.choosePaymentMethod("card");
+                          controller.choosePaymentMethod("1");
                         },
                         child: CardPaymentMethodCheckout(
                             title: "Payment Cards",
-                            isActive: controller.paymentMethod == "card"
+                            isActive: controller.paymentMethod == "1" // Card
                                 ? true
                                 : false),
                       ),
@@ -76,31 +78,31 @@ class Checkout extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              controller.chooseDeliveryType("delivery");
+                              controller.chooseDeliveryType("0");// 0 => Delivery
                             },
                             child: CardDeliveryTypeCheckout(
                                 imagename: AppImageAsset.deliveryImage2,
                                 title: "Delivery",
-                                active: controller.deliveryType == "delivery"
+                                active: controller.deliveryType == "0"
                                     ? true
                                     : false),
                           ),
                           const SizedBox(width: 10),
                           InkWell(
                             onTap: () {
-                              controller.chooseDeliveryType("recive");
+                              controller.chooseDeliveryType("1"); // 1 => recive
                             },
                             child: CardDeliveryTypeCheckout(
                                 imagename: AppImageAsset.drivethruImage,
                                 title: "Revice",
-                                active: controller.deliveryType == "recive"
+                                active: controller.deliveryType == "1"
                                     ? true
                                     : false),
                           ),
                         ],
                       ),
                       const SizedBox(height: 20),
-                      if (controller.deliveryType == "delivery")
+                      if (controller.deliveryType == "0")
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
